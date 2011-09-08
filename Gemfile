@@ -11,6 +11,8 @@ gem 'bcrypt-ruby', :require => "bcrypt"
 
 gem 'miniconf'
 
+gem 'pry'
+
 # template
 gem 'mime-types', '1.16'
 gem 'wand', '~> 0.4'
