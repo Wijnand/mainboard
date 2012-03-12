@@ -34,9 +34,6 @@ group :test do
   gem 'right_aws'
   gem 'right_http_connection'
 
-  gem 'ruby-debug-base19', "0.11.24"
-  gem 'ruby-debug19', "0.11.6"
-
   gem 'rspec'
   gem 'artifice'
   gem 'capybara'
