@@ -8,7 +8,7 @@ Mainboard.helpers do
 
 
   def amz_requested_acl
-    amz_headers('x-amz-acl') || 'private'
+    amz_headers('x-amz-acl') || amz_headers('http_x_amz_acl') || 'private'
   end
 
   def subresource
