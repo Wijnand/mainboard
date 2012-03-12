@@ -76,7 +76,11 @@ Mainboard.helpers do
         :access => amz_requested_acl
       )
     else
-      raise SlotAlreadyExists
+      slot.update_attributes(
+        :bit => io,
+        :bit_name => slot_name,
+        :access => amz_requested_acl
+      )
     end
 
     etag slot.bit.get_md5
