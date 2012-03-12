@@ -84,12 +84,17 @@ Mainboard.helpers do
 
   def delete_slot bucket_name, slot_name
 
-    bucket = get_bucket bucket_name
-    slot = get_slot bucket, slot_name
+    begin
+      bucket = get_bucket bucket_name
+      slot = get_slot bucket, slot_name
 
-    only_can_write slot
+      only_can_write slot
 
-    slot.destroy
+      slot.destroy
+    rescue
+      # we seem to get this request multiple times, it doesn't matter if a slot is already gone
+    end
+    status 204
   end
 
 end
