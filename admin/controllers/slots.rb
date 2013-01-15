@@ -57,7 +57,8 @@ Admin.controllers :slots, :parent => :bucket do
       :bit => tempfile.open,
       :bit_name => (params[:slot][:bit_name].blank? ? params[:slot][:uploaded_file][:filename] :
         params[:slot][:bit_name]).sub(/^[\/\.]*/,''),
-      :access => params[:slot][:access]
+      :access => params[:slot][:access],
+      :metadata => {:head => params[:slot][:head]}
     )
 
     if @slot.save
