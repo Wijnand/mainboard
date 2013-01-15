@@ -55,7 +55,7 @@ Mainboard.helpers do
     slot.save!
   end
 
-  def put_slot bucket_name, slot_name, io
+  def put_slot bucket_name, slot_name, io, opts = {}
     bucket = get_bucket bucket_name
 
     only_can_write bucket
@@ -73,12 +73,14 @@ Mainboard.helpers do
       slot = bucket.slots.create(
         :bit => io,
         :bit_name => slot_name,
+        :content_disposition => opts[:content_disposition],
         :access => amz_requested_acl
       )
     else
       slot.update_attributes(
         :bit => io,
         :bit_name => slot_name,
+        :content_disposition => opts[:content_disposition],
         :access => amz_requested_acl
       )
     end

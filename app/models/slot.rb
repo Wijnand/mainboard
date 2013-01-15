@@ -14,6 +14,8 @@ class Slot
   # permission set for authenticated access
   key :auth_access,   Array
 
+  key :content_disposition, String
+
   timestamps!
   ensure_index :bit_name
 

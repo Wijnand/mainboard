@@ -29,11 +29,12 @@ Mainboard.controllers do
   # put slot
   put '/:bucket/*slot' do |bucket, slot|
     logger.debug "+ slot put"
+    opts = {:content_disposition => request.env["HTTP_CONTENT_DISPOSITION"]}
     case subresource
     when :acl
       put_slot_acls bucket, slot.join('/'), request.body
     else
-      put_slot bucket, slot.join('/'), request.body
+      put_slot bucket, slot.join('/'), request.body, opts
     end
   end
 
