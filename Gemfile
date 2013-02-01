@@ -3,7 +3,7 @@ source :rubygems
 # Project requirements
 gem 'rake'
 gem 'rack-flash'
-gem 'thin'
+gem 'puma'
 gem 'rack-fiber_pool', '~> 0.9.1'
 
 # Component requirements
