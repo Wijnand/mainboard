@@ -4,6 +4,7 @@ source :rubygems
 gem 'rake'
 gem 'rack-flash'
 gem 'puma'
+gem 'thin'
 gem 'rack-fiber_pool', '~> 0.9.1'
 
 # Component requirements
